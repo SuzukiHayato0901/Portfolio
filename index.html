@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鈴木颯斗ポートフォリオ</title>
+    <meta name="description" content="ゲーム業界向けポートフォリオ - 自己紹介とスキル">
+    <title>ポートフォリオ</title>
+    <style>
+        :root{--accent:#2b6cb0;--bg:#fafafa;--text:#111}
+        body{font-family:system-ui,-apple-system,\"Segoe UI\",Roboto,\"Hiragino Kaku Gothic ProN\",\"Noto Sans JP\",sans-serif;color:var(--text);background:var(--bg);margin:0}
+        .hero{max-width:980px;margin:40px auto;padding:24px;background:#fff;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+        .hero-inner{display:flex;align-items:center;gap:24px}
+        .profile-photo{flex:0 0 180px}
+        .profile-photo img{width:180px;height:180px;object-fit:cover;border-radius:12px;border:3px solid rgba(43,108,176,0.12)}
+        .intro h1{margin:0 0 8px 0;font-size:1.6rem}
+        .intro .school{margin:0 0 8px 0;color:#444}
+        .intro .meta{margin:8px 0 0 0;padding:0;list-style:none}
+        .intro .meta li{margin:4px 0;background:linear-gradient(90deg, rgba(43,108,176,0.06), transparent);padding:6px 8px;border-radius:6px;display:inline-block}
+        @media (max-width:640px){.hero-inner{flex-direction:column;text-align:center}.profile-photo{flex:0 0 auto}.profile-photo img{width:140px;height:140px}}
+    </style>
 </head>
 <body>
-    <p>自己紹介</p>
+    <header class="hero">
+        <div class="hero-inner">
+            <figure class="profile-photo">
+                <!-- ここにプロフィール画像を置いてください（例: profile.jpg） -->
+                <img src="profile.jpg" alt="プロフィール写真">
+            </figure>
+            <div class="intro">
+                <!-- 以下を実際の情報に置き換えてください -->
+                <h1>山田 太郎</h1>
+                <p class="school">東京ゲーム大学 / 2026年3月 卒業予定</p>
+                <ul class="meta">
+                    <li>資格: Unity認定プログラマー</li>
+                    <li>資格: 基本情報技術者試験</li>
+                </ul>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
