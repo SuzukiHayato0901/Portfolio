@@ -14,10 +14,8 @@ body {
 
 /* 写真 */
 .profile-image img {
-  width: 150px;
-  height: 200px;
-  object-fit: cover;
-  background: #333;
+  width: 100px;
+  height: 130px;
 }
 
 /* 右側 */
