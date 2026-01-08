@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    
+<head>
+  <!-- 文字コード設定 -->
+  <meta charset="UTF-8">
+  <!-- レスポンシブ対応のためのビューポート設定 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ページタイトル -->
+  <title>鈴木颯斗ポートフォリオ</title>
+  <!-- 外部CSSファイルの読み込み -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<!-- ヘッダー：固定ナビゲーション -->
 <header>
-  <h1 class="logo">鈴木　颯斗</h1>
+  <!-- ロゴ（サイト名） -->
+  <h1 class="logo">鈴木颯斗ポートフォリオ</h1>
+  <!-- ナビゲーションメニュー -->
   <nav>
+    <!-- 各セクションへスクロールするボタン -->
     <button class="nav-btn" data-target="hero">Top</button>
     <button class="nav-btn" data-target="about">自己紹介</button>
     <button class="nav-btn" data-target="skills">制作スキル</button>
@@ -21,26 +28,27 @@
   </nav>
 </header>
 
-<!-- 各ページ：切り替え対象 -->
+<!-- トップページ：メインビジュアル -->
 <div id="hero" class="page">
   <section class="hero">
-    <h2>鈴木　颯斗</h2>
+    <h2>ポートフォリオ</h2>
   </section>
 </div>
 
-<!-- 自己紹介 -->
-<!-- 自己紹介 -->
+<!-- 自己紹介セクション -->
 <div id="about" class="page">
   <section class="section">
-
+    <!-- セクション見出し -->
     <h2>自己紹介</h2>
-
+    <!-- プロフィール画像とテーブルを横並びに配置 -->
     <div class="aboutContent">
-      <img src="imgs/szai/2140084_IMG_4948251105.jpg" class="myImg">
-
+      <!-- プロフィール画像 -->
+      <img src="imgs/szai/2140084_IMG_4948251105.jpg" class="myImg" alt="鈴木颯斗">
+      <!-- プロフィール情報エリア -->
       <div class="profileArea">
+        <!-- 名前 -->
         <h3 class="profileName">鈴木　颯斗</h3>
-
+        <!-- プロフィールテーブル -->
         <table class="profileTable">
           <tr>
             <th>生年月日</th>
@@ -57,82 +65,86 @@
           <tr>
             <th>好きなゲーム</th>
             <td>
-              Fate/Grand Order、ポケットモンスターダイヤモンド・パール、モンスターハンター4G<br>
-              スターレゾナンス
+              東方project | ドラゴンクエスト | Fate/Grand Order | ポケットモンスターダイヤモンド・パール | モンスターハンター4G |
+              スターレゾナンス | 艦隊これくしょん～艦これ～
             </td>
           </tr>
         </table>
       </div>
     </div>
-
   </section>
 </div>
 
-
-
-
-
-<!-- スキル -->
+<!-- 制作スキルセクション -->
 <div id="skills" class="page">
   <section class="section">
+    <!-- セクション見出し -->
     <h2>制作スキル</h2>
-
+    <!-- スキル一覧テーブル -->
     <table class="profileTable">
       <tr>
         <th>開発言語</th>
-        <td>C言語、C++、Java、HTML、CSS</td>
+        <td>C、C#、C++、Java、HTML、CSS、PHP</td>
       </tr>
       <tr>
         <th>開発環境</th>
-        <td>Unity、VisualStudio、VisualStudio Code、Unreal Engine4、GitHub</td>
+        <td>Unity、VisualStudio、VisualStudio Code、Sourcetree、GitHub、Unreal Engine4</td>
+      </tr>
+      <tr>
+        <th>使用連絡ツール</th>
+        <td>Slack、Discord</td>
       </tr>
     </table>
-
   </section>
 </div>
 
-
-
-
-<!-- 作ったゲーム -->
+<!-- 制作物（ゲーム）セクション -->
 <div id="gameWorks" class="page">
   <section class="section">
+    <!-- セクション見出し -->
     <h2>作ったゲーム</h2>
+    <!-- 作品をグリッドレイアウトで表示 -->
     <div class="work-grid">
+      <!-- 作品カード -->
       <div class="work-card">
         <h3>3D アクションゲーム</h3>
-        <img src="imgs/szai/ChatGPT Image 2025年10月20日 13_37_28.png">
+        <img src="imgs/szai/ChatGPT Image 2025年10月20日 13_37_28.png" alt="3Dアクションゲーム">
         <p>Unity使用</p>
       </div>
-      
+      <!-- 追加の作品はここに同じ構造でカードを追加 -->
     </div>
   </section>
 </div>
 
-
-
-<!-- プログラミング -->
+<!-- プログラミング作品セクション -->
 <div id="progWorks" class="page">
   <section class="section">
+    <!-- セクション見出し -->
     <h2>Programming Works（C++ / DxLib）</h2>
+    <!-- 作品をグリッドレイアウトで表示 -->
     <div class="work-grid">
+      <!-- 作品カード -->
       <div class="work-card">
-        <h3>チェス</h3>
-        <p>C++ & DxLib</p>
+        <h3>2D</h3>
+        <p>Unity使用</p>
       </div>
+      <!-- 追加の作品はここに同じ構造でカードを追加 -->
     </div>
   </section>
 </div>
 
-
-
-<!-- 連絡先 -->
+<!-- 連絡先セクション -->
 <div id="contact" class="page">
   <section class="section">
+    <!-- セクション見出し -->
     <h2>Contact</h2>
-    <p>Email: sample@example.com</p>
+    <!-- メールアドレス表示 -->
+    <p style="text-align: center; font-size: 18px;">Email: sample@example.com</p>
   </section>
 </div>
+
+<!-- 外部JavaScriptファイルの読み込み（ページ最後に配置） -->
+<script src="script.js"></script>
 
 </body>
 </html>

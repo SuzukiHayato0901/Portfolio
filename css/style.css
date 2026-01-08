@@ -1,177 +1,300 @@
-/* スクロール */
-html{
+/* ========================================
+   スクロール設定
+   ======================================== */
+/* ページ内リンクのスムーズスクロールを有効化 */
+html {
   scroll-behavior: smooth;
 }
 
-/* 背景 */
+/* ========================================
+   背景設定
+   ======================================== */
+/* ページ全体の背景画像と基本スタイル */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #000;  /* 文字の色 */
-
-  background-image: url("img/Back_Image.png");
-  background-size: cover;        /* 画面いっぱい */
-  background-position: center;   /* 中央 */
-  background-repeat: no-repeat;  /* 繰り返さない */
-  background-attachment: fixed;  /* スクロールしても固定 */
+  margin: 0; /* デフォルトの余白をリセット */
+  font-family: 'Segoe UI', sans-serif; /* フォント設定 */
+  color: #000; /* 文字色 */
+  background-image: url("../imgs/szai/Back_Image.jpg"); /* 背景画像のパス */
+  background-size: cover; /* 画面全体に背景を表示 */
+  background-position: center; /* 背景画像を中央配置 */
+  background-repeat: no-repeat; /* 背景画像を繰り返さない */
+  background-attachment: fixed; /* スクロールしても背景を固定 */
 }
 
-/* ヘッダー */
+/* ========================================
+   ヘッダー（固定ナビゲーション）
+   ======================================== */
 header {
-  position: fixed;
-  width: 100%;
-  background: #fff;
-  color: #000;
-  padding: 15px 30px;
-
-  display: flex;
-  align-items: center;
-
-  justify-content: flex-start; /* ←これで左寄せ */
-  gap: 40px; /* ロゴとボタンの間 */
-  box-shadow: 0 2px 10px #000;
-  z-index: 200;
+  position: fixed; /* 画面上部に固定 */
+  width: 100%; /* 横幅いっぱい */
+  background: #fff; /* 背景色：白 */
+  color: #000; /* 文字色：黒 */
+  padding: 15px 30px; /* 内側の余白 */
+  display: flex; /* フレックスボックスで配置 */
+  align-items: center; /* 縦方向中央揃え */
+  justify-content: flex-start; /* 横方向左寄せ */
+  gap: 40px; /* ロゴとナビゲーションの間隔 */
+  box-shadow: 0 2px 10px #000; /* 下部に影を追加 */
+  z-index: 200; /* 他の要素より前面に表示 */
+  box-sizing: border-box; /* パディングを含めたサイズ計算 */
 }
 
+/* ロゴのスタイル */
+.logo {
+  margin: 0; /* デフォルトの余白をリセット */
+  font-size: 20px; /* フォントサイズ */
+  font-weight: bold; /* 太字 */
+}
+
+/* ナビゲーションボタンの配置 */
 nav {
-  display: flex;
+  display: flex; /* フレックスボックスで横並び */
   gap: 10px; /* ボタン同士の間隔 */
+  flex-wrap: wrap; /* 画面幅が狭い時は折り返し */
 }
 
-nav button:hover {
-  background: #444;
+/* ナビゲーションボタンのスタイル */
+.nav-btn {
+  background: #333; /* 背景色：濃いグレー */
+  color: #fff; /* 文字色：白 */
+  border: none; /* 枠線なし */
+  padding: 10px 20px; /* 内側の余白 */
+  border-radius: 5px; /* 角を丸く */
+  cursor: pointer; /* マウスカーソルをポインターに */
+  font-size: 14px; /* フォントサイズ */
+  transition: background 0.3s; /* ホバー時のアニメーション */
 }
 
-/* 一番上 */
+/* ボタンホバー時のスタイル */
+.nav-btn:hover {
+  background: #444; /* 背景色を少し明るく */
+}
+
+/* ========================================
+   ページセクション共通設定
+   ======================================== */
+/* 各ページセクションの基本設定 */
 .page {
-  padding-top: 40px;
-  scroll-margin-top: 140px; /* ヘッダー固定対策 */
+  padding-top: 40px; /* 上部の余白 */
+  scroll-margin-top: 80px; /* スクロール時のヘッダー分の余白 */
 }
 
-/*  */
+/* ========================================
+   Heroセクション（トップページ）
+   ======================================== */
 .hero {
-  height: 60vh;
-  background: rgba(255, 255, 255, 0.6); /* 透過だけ */
-  backdrop-filter: blur(4px);    /* ガラス風 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 40vh; /* 画面の40%の高さ */
+  background: rgba(255, 255, 255, 0.6); /* 半透明の白背景 */
+  backdrop-filter: blur(4px); /* 背景をぼかしてガラス風に */
+  display: flex; /* フレックスボックスで配置 */
+  flex-direction: column; /* 縦方向に配置 */
+  justify-content: center; /* 縦方向中央揃え */
+  align-items: center; /* 横方向中央揃え */
+  margin-bottom: 5px; /* 下部の余白 */
 }
 
-/* 全体調整 */
+/* Hero見出しのスタイル */
+.hero h2 {
+  font-size: 48px; /* フォントサイズ */
+  margin: 0; /* デフォルトの余白をリセット */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* グラデーション背景 */
+  color: #fff; /* 文字色：白 */
+  padding: 20px 40px; /* 内側の余白 */
+  border-radius: 10px; /* 角を丸く */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 影を追加 */
+}
+
+/* ========================================
+   コンテンツセクション共通設定
+   ======================================== */
+/* 各セクションの共通スタイル */
 .section {
-  background: rgba(255, 255, 255, 0.6); /* 白の半透明 */
-  border-radius: 12px;
-
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 50px;
+  background: rgba(255, 255, 255, 0.6); /* 半透明の白背景 */
+  border-radius: 12px; /* 角を丸く */
+  max-width: 1000px; /* 最大幅を設定 */
+  margin: 15px auto; /* 中央配置と上下の余白 */
+  padding: 30px; /* 内側の余白 */
+  box-sizing: border-box; /* パディングを含めたサイズ計算 */
 }
 
-/* 自己紹介 */
-.profileArea {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 中央寄せ */
+/* セクション見出しのスタイル */
+.section h2 {
+  text-align: center; /* 中央揃え */
+  font-size: 32px; /* フォントサイズ */
+  margin-bottom: 20px; /* 下部の余白 */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* グラデーション背景 */
+  color: #fff; /* 文字色：白 */
+  padding: 15px 30px; /* 内側の余白 */
+  border-radius: 10px; /* 角を丸く */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* 影を追加 */
 }
 
-.profileName {
-  margin-bottom: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 0.1em;
-}
-
-
-/* スキル */
-.skills-grid, .work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding-top: 20px;
-}
-
-.skill-card, .work-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-}
-
+/* ========================================
+   自己紹介セクション
+   ======================================== */
+/* プロフィール画像とテーブルの配置 */
 .aboutContent {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; /* 中央寄せ */
-  gap: 40px;
+  display: flex; /* フレックスボックスで配置 */
+  flex-direction: row; /* 横並び */
+  align-items: center; /* 縦方向中央揃え */
+  justify-content: center; /* 横方向中央揃え */
+  gap: 40px; /* 画像とテーブルの間隔 */
 }
 
-.aboutText{
-  max-width: 600px;
-  line-height: 1.8;
-  font-size: 18px;
+/* プロフィール画像のスタイル */
+.myImg {
+  width: 100%; /* 横幅100% */
+  max-width: 200px; /* 最大幅を200pxに制限 */
+  height: auto; /* 高さは自動調整 */
+  aspect-ratio: 1/1; /* 正方形に保つ */
+  object-fit: cover; /* 画像をトリミングして表示 */
+  border-radius: 50%; /* 円形にする */
+  border: 3px solid #0af; /* 青い枠線 */
+  box-shadow: 0 0 10px #000; /* 影を追加 */
 }
 
-/* 画像 */
-
-.myImg{
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #0af;
-  box-shadow: 0 0 10px #000;
+/* プロフィール情報エリア */
+.profileArea {
+  display: flex; /* フレックスボックスで配置 */
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* 横方向中央揃え */
 }
 
-/* レスポンシブ：小さい画面では画像をさらに小さくする */
-@media (max-width: 600px) {
-  .aboutContent {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .myImg {
-    max-width: 150px;
-  }
+/* プロフィール名前のスタイル */
+.profileName {
+  margin-bottom: 15px; /* 下部の余白 */
+  font-size: 24px; /* フォントサイズ */
+  font-weight: bold; /* 太字 */
+  letter-spacing: 0.1em; /* 文字間隔を広げる */
 }
 
-/* 画像サイズ調整 */
-.work-card img{
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 10px 0;
-}
-
-
-/* テーブル */
+/* ========================================
+   テーブル共通スタイル
+   ======================================== */
+/* プロフィールテーブル・スキルテーブルの共通スタイル */
 .profileTable {
-  border-collapse: collapse;
-  min-width: 320px;
-  max-width: 900px;
-  background: #fff;
-  box-shadow: 0 0 10px #000;
-  border-radius: 10px;
-  overflow: hidden;
+  border-collapse: collapse; /* 枠線を結合 */
+  min-width: 320px; /* 最小幅 */
+  max-width: 900px; /* 最大幅 */
+  background: #fff; /* 背景色：白 */
+  box-shadow: 0 0 10px #000; /* 影を追加 */
+  border-radius: 10px; /* 角を丸く */
+  overflow: hidden; /* はみ出し部分を隠す */
+  margin: 0 auto; /* 中央配置 */
 }
 
+/* テーブルのセルスタイル */
 .profileTable th,
 .profileTable td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #ddd;
+  padding: 12px 16px; /* 内側の余白 */
+  border-bottom: 1px solid #ddd; /* 下部に薄いグレーの枠線 */
 }
 
+/* テーブルの見出しセルスタイル */
 .profileTable th {
-  width: 120px;
-  background: #f0f8ff;
-  text-align: left;
-  font-weight: bold;
+  width: 120px; /* 幅を固定 */
+  background: #f0f8ff; /* 背景色：薄い青 */
+  text-align: left; /* 左揃え */
+  font-weight: bold; /* 太字 */
 }
 
+/* テーブルの最後の行の枠線を削除 */
 .profileTable tr:last-child th,
 .profileTable tr:last-child td {
   border-bottom: none;
+}
+
+/* ========================================
+   作品グリッドレイアウト
+   ======================================== */
+/* 作品カードをグリッドで配置 */
+.work-grid {
+  display: grid; /* グリッドレイアウト */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 自動的に列数を調整 */
+  gap: 20px; /* カード同士の間隔 */
+  padding-top: 10px; /* 上部の余白 */
+}
+
+/* 作品カードのスタイル */
+.work-card {
+  background: #fff; /* 背景色：白 */
+  padding: 20px; /* 内側の余白 */
+  border-radius: 10px; /* 角を丸く */
+  box-shadow: 0 0 10px #000; /* 影を追加 */
+}
+
+/* 作品カード内の見出し */
+.work-card h3 {
+  margin-top: 0; /* 上部の余白をリセット */
+}
+
+/* 作品カード内の画像 */
+.work-card img {
+  width: 100%; /* 横幅100% */
+  height: auto; /* 高さは自動調整 */
+  object-fit: cover; /* 画像をトリミングして表示 */
+  border-radius: 8px; /* 角を丸く */
+  margin: 10px 0; /* 上下の余白 */
+}
+
+/* ========================================
+   レスポンシブデザイン（タブレット）
+   ======================================== */
+@media (max-width: 768px) {
+  /* ヘッダーを縦並びに変更 */
+  header {
+    flex-direction: column; /* 縦方向に配置 */
+    gap: 15px; /* 要素間の間隔 */
+    padding: 15px; /* 内側の余白 */
+  }
+
+  /* ロゴのサイズを小さく */
+  .logo {
+    font-size: 18px;
+  }
+
+  /* ナビゲーションを中央揃えに */
+  nav {
+    justify-content: center;
+  }
+
+  /* セクションの余白を調整 */
+  .section {
+    padding: 30px 20px; /* 内側の余白を減らす */
+    margin: 20px 10px; /* 外側の余白を減らす */
+  }
+
+  /* Hero見出しのサイズを小さく */
+  .hero h2 {
+    font-size: 32px;
+    padding: 15px 25px;
+  }
+
+  /* セクション見出しのサイズを小さく */
+  .section h2 {
+    font-size: 24px;
+    padding: 12px 20px;
+  }
+}
+
+/* ========================================
+   レスポンシブデザイン（スマートフォン）
+   ======================================== */
+@media (max-width: 600px) {
+  /* プロフィールを縦並びに変更 */
+  .aboutContent {
+    flex-direction: column; /* 縦方向に配置 */
+    gap: 20px; /* 要素間の間隔 */
+  }
+
+  /* プロフィール画像を小さく */
+  .myImg {
+    max-width: 150px;
+  }
+
+  /* ナビゲーションボタンを小さく */
+  .nav-btn {
+    padding: 8px 15px; /* 内側の余白を減らす */
+    font-size: 12px; /* フォントサイズを小さく */
+  }
 }
