@@ -1,45 +1,138 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    
+<header>
+  <h1 class="logo">鈴木　颯斗</h1>
+  <nav>
+    <button class="nav-btn" data-target="hero">Top</button>
+    <button class="nav-btn" data-target="about">自己紹介</button>
+    <button class="nav-btn" data-target="skills">制作スキル</button>
+    <button class="nav-btn" data-target="gameWorks">制作物</button>
+    <button class="nav-btn" data-target="progWorks">Programming</button>
+    <button class="nav-btn" data-target="contact">Contact</button>
+  </nav>
+</header>
 
-<section class="profile">
+<!-- 各ページ：切り替え対象 -->
+<div id="hero" class="page">
+  <section class="hero">
+    <h2>鈴木　颯斗</h2>
+  </section>
+</div>
 
-  <!-- 左：写真 -->
-  <div class="profile-image">
-    <!-- 後で写真差し替え -->
-    <img src="imgs/Photo/2140084_IMG_4948251105.jpg" alt="プロフィール写真">
-  </div>
+<!-- 自己紹介 -->
+<!-- 自己紹介 -->
+<div id="about" class="page">
+  <section class="section">
 
-  <!-- 右：名前＋情報 -->
-  <div class="profile-info">
+    <h2>自己紹介</h2>
 
-    <h1 class="name">鈴木 颯斗</h1>
+    <div class="aboutContent">
+      <img src="imgs/szai/2140084_IMG_4948251105.jpg" class="myImg">
 
-    <div class="info-box">
-      <div class="info-row">
-        <div class="label">学校</div>
-        <div class="value">岩崎学園デジタルアーツ専門学校</div>
-      </div>
+      <div class="profileArea">
+        <h3 class="profileName">鈴木　颯斗</h3>
 
-      <div class="info-row">
-        <div class="label">生年月日</div>
-        <div class="value">2005年 9月 1日</div>
-      </div>
-
-      <div class="info-row">
-        <div class="label">趣味</div>
-        <div class="value">ゲーム、ミリタリー、散歩</div>
+        <table class="profileTable">
+          <tr>
+            <th>生年月日</th>
+            <td>2005年9月1日</td>
+          </tr>
+          <tr>
+            <th>学校</th>
+            <td>横浜デジタルアーツ専門学校　ゲーム科</td>
+          </tr>
+          <tr>
+            <th>趣味</th>
+            <td>ゲーム、ミリタリー、散歩</td>
+          </tr>
+          <tr>
+            <th>好きなゲーム</th>
+            <td>
+              Fate/Grand Order、ポケットモンスターダイヤモンド・パール、モンスターハンター4G<br>
+              スターレゾナンス
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
 
-  </div>
+  </section>
+</div>
 
-</section>
+
+
+
+
+<!-- スキル -->
+<div id="skills" class="page">
+  <section class="section">
+    <h2>制作スキル</h2>
+
+    <table class="profileTable">
+      <tr>
+        <th>開発言語</th>
+        <td>C言語、C++、Java、HTML、CSS</td>
+      </tr>
+      <tr>
+        <th>開発環境</th>
+        <td>Unity、VisualStudio、VisualStudio Code、Unreal Engine4、GitHub</td>
+      </tr>
+    </table>
+
+  </section>
+</div>
+
+
+
+
+<!-- 作ったゲーム -->
+<div id="gameWorks" class="page">
+  <section class="section">
+    <h2>作ったゲーム</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <h3>3D アクションゲーム</h3>
+        <img src="imgs/szai/ChatGPT Image 2025年10月20日 13_37_28.png">
+        <p>Unity使用</p>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+
+
+<!-- プログラミング -->
+<div id="progWorks" class="page">
+  <section class="section">
+    <h2>Programming Works（C++ / DxLib）</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <h3>チェス</h3>
+        <p>C++ & DxLib</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<!-- 連絡先 -->
+<div id="contact" class="page">
+  <section class="section">
+    <h2>Contact</h2>
+    <p>Email: sample@example.com</p>
+  </section>
+</div>
 
 </body>
 </html>

@@ -1,59 +1,177 @@
+/* スクロール */
+html{
+  scroll-behavior: smooth;
+}
+
+/* 背景 */
 body {
-  font-family: sans-serif;
-  background: #111;
-  color: #fff;
-  padding: 40px;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000;  /* 文字の色 */
+
+  background-image: url("img/Back_Image.png");
+  background-size: cover;        /* 画面いっぱい */
+  background-position: center;   /* 中央 */
+  background-repeat: no-repeat;  /* 繰り返さない */
+  background-attachment: fixed;  /* スクロールしても固定 */
 }
 
-/* 全体 */
-.profile {
+/* ヘッダー */
+header {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  padding: 15px 30px;
+
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
+  align-items: center;
+
+  justify-content: flex-start; /* ←これで左寄せ */
+  gap: 40px; /* ロゴとボタンの間 */
+  box-shadow: 0 2px 10px #000;
+  z-index: 200;
 }
 
-/* 写真 */
-.profile-image img {
-  width: 100px;
-  height: 130px;
-}
-
-/* 右側 */
-.profile-info {
-  flex: 1;
-}
-
-/* 名前 */
-.name {
-  margin: 0 0 15px 0;
-  font-size: 28px;
-}
-
-/* 枠 */
-.info-box {
-  border: 1px solid #555;
-}
-
-/* 行 */
-.info-row {
+nav {
   display: flex;
-  border-top: 1px solid #555;
+  gap: 10px; /* ボタン同士の間隔 */
 }
 
-.info-row:first-child {
-  border-top: none;
+nav button:hover {
+  background: #444;
 }
 
-/* 左：見出し */
-.label {
+/* 一番上 */
+.page {
+  padding-top: 40px;
+  scroll-margin-top: 140px; /* ヘッダー固定対策 */
+}
+
+/*  */
+.hero {
+  height: 60vh;
+  background: rgba(255, 255, 255, 0.6); /* 透過だけ */
+  backdrop-filter: blur(4px);    /* ガラス風 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 全体調整 */
+.section {
+  background: rgba(255, 255, 255, 0.6); /* 白の半透明 */
+  border-radius: 12px;
+
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 50px;
+}
+
+/* 自己紹介 */
+.profileArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 中央寄せ */
+}
+
+.profileName {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+
+/* スキル */
+.skills-grid, .work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.skill-card, .work-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* 中央寄せ */
+  gap: 40px;
+}
+
+.aboutText{
+  max-width: 600px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* 画像 */
+
+.myImg{
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0af;
+  box-shadow: 0 0 10px #000;
+}
+
+/* レスポンシブ：小さい画面では画像をさらに小さくする */
+@media (max-width: 600px) {
+  .aboutContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .myImg {
+    max-width: 150px;
+  }
+}
+
+/* 画像サイズ調整 */
+.work-card img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+
+/* テーブル */
+.profileTable {
+  border-collapse: collapse;
+  min-width: 320px;
+  max-width: 900px;
+  background: #fff;
+  box-shadow: 0 0 10px #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profileTable th,
+.profileTable td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.profileTable th {
   width: 120px;
-  padding: 10px;
-  background: #222;
-  border-right: 1px solid #555;
+  background: #f0f8ff;
+  text-align: left;
+  font-weight: bold;
 }
 
-/* 右：内容 */
-.value {
-  flex: 1;
-  padding: 10px;
+.profileTable tr:last-child th,
+.profileTable tr:last-child td {
+  border-bottom: none;
 }
