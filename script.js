@@ -27,3 +27,78 @@ buttons.forEach(btn => {
     }
   });
 });
+
+/* ========================================
+   画像クリック拡大機能
+   ======================================== */
+
+// DOMが完全に読み込まれた後に実行
+document.addEventListener("DOMContentLoaded", () => {
+  // モーダル要素を取得
+  const modal = document.getElementById("imageModal");
+  const modalImage = document.getElementById("modalImage");
+  const closeModalBtn = document.querySelector(".close-modal");
+
+  // 要素が存在するか確認
+  if (!modal || !modalImage || !closeModalBtn) {
+    console.error("モーダル要素が見つかりません");
+    return;
+  }
+
+  // 作品カード内のすべての画像を取得
+  const workImages = document.querySelectorAll(".work-card img");
+
+  // 各画像にクリックイベントを設定
+  workImages.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex"; // モーダルを表示
+      modalImage.src = img.src; // クリックした画像をモーダルに表示
+      modalImage.alt = img.alt; // alt属性もコピー
+    });
+  });
+
+  // 閉じるボタンをクリックしたらモーダルを閉じる
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none"; // モーダルを非表示
+  });
+
+  // モーダル背景をクリックしても閉じる
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none"; // モーダルを非表示
+    }
+  });
+});
+
+/* ========================================
+   画像クリック拡大機能
+   ======================================== */
+
+// モーダル要素を取得
+const modal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.querySelector(".close-modal");
+
+// 作品カード内のすべての画像を取得
+const workImages = document.querySelectorAll(".work-card img");
+
+// 各画像にクリックイベントを設定
+workImages.forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex"; // モーダルを表示
+    modalImage.src = img.src; // クリックした画像をモーダルに表示
+    modalImage.alt = img.alt; // alt属性もコピー
+  });
+});
+
+// 閉じるボタンをクリックしたらモーダルを閉じる
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none"; // モーダルを非表示
+});
+
+// モーダル背景をクリックしても閉じる
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none"; // モーダルを非表示
+  }
+});
