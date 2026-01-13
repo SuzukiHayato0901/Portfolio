@@ -14,7 +14,7 @@ body {
   margin: 0; /* デフォルトの余白をリセット */
   font-family: 'Segoe UI', sans-serif; /* フォント設定 */
   color: #000; /* 文字色 */
-  background-image: url("../imgs/szai/Back_Image.jpg"); /* 背景画像のパス */
+  background-image: url("imgs/szai/Back_Image.jpg"); /* 背景画像のパス */
   background-size: cover; /* 画面全体に背景を表示 */
   background-position: center; /* 背景画像を中央配置 */
   background-repeat: no-repeat; /* 背景画像を繰り返さない */
@@ -75,7 +75,7 @@ nav {
    ======================================== */
 /* 各ページセクションの基本設定 */
 .page {
-  padding-top: 40px; /* 上部の余白 */
+  padding-top: 0px; /* 上部の余白なし */
   scroll-margin-top: 80px; /* スクロール時のヘッダー分の余白 */
 }
 
@@ -90,7 +90,7 @@ nav {
   flex-direction: column; /* 縦方向に配置 */
   justify-content: center; /* 縦方向中央揃え */
   align-items: center; /* 横方向中央揃え */
-  margin-bottom: 5px; /* 下部の余白 */
+  margin-bottom: -30px; /* 下部の余白なし */
 }
 
 /* Hero見出しのスタイル */
@@ -112,7 +112,7 @@ nav {
   background: rgba(255, 255, 255, 0.6); /* 半透明の白背景 */
   border-radius: 12px; /* 角を丸く */
   max-width: 1000px; /* 最大幅を設定 */
-  margin: 15px auto; /* 中央配置と上下の余白 */
+  margin: 5px auto; /* 中央配置と上下の余白 */
   padding: 30px; /* 内側の余白 */
   box-sizing: border-box; /* パディングを含めたサイズ計算 */
 }
@@ -136,7 +136,7 @@ nav {
 .aboutContent {
   display: flex; /* フレックスボックスで配置 */
   flex-direction: row; /* 横並び */
-  align-items: center; /* 縦方向中央揃え */
+  align-items: stretch; /* 縦方向に伸ばす */
   justify-content: center; /* 横方向中央揃え */
   gap: 40px; /* 画像とテーブルの間隔 */
 }
@@ -144,13 +144,13 @@ nav {
 /* プロフィール画像のスタイル */
 .myImg {
   width: 100%; /* 横幅100% */
-  max-width: 200px; /* 最大幅を200pxに制限 */
+  max-width: 250px; /* 最大幅を250pxに制限 */
   height: auto; /* 高さは自動調整 */
-  aspect-ratio: 1/1; /* 正方形に保つ */
+  aspect-ratio: 3/4; /* 長方形に変更 */
   object-fit: cover; /* 画像をトリミングして表示 */
-  border-radius: 50%; /* 円形にする */
   border: 3px solid #0af; /* 青い枠線 */
   box-shadow: 0 0 10px #000; /* 影を追加 */
+  flex-shrink: 0; /* 縮むのを防ぐ */
 }
 
 /* プロフィール情報エリア */
@@ -158,6 +158,7 @@ nav {
   display: flex; /* フレックスボックスで配置 */
   flex-direction: column; /* 縦方向に配置 */
   align-items: center; /* 横方向中央揃え */
+  justify-content: center; /* 縦方向中央揃え */
 }
 
 /* プロフィール名前のスタイル */
