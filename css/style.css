@@ -209,7 +209,7 @@ nav {
 /* 作品カードをグリッドで配置 */
 .work-grid {
   display: grid; /* グリッドレイアウト */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 自動的に列数を調整 */
+  grid-template-columns: repeat(3, 1fr); /* 3列で固定 */
   gap: 20px; /* カード同士の間隔 */
   padding-top: 10px; /* 上部の余白 */
 }
@@ -234,49 +234,6 @@ nav {
   object-fit: cover; /* 画像をトリミングして表示 */
   border-radius: 8px; /* 角を丸く */
   margin: 10px 0; /* 上下の余白 */
-}
-
-/* ========================================
-   動画ホバー機能
-   ======================================== */
-/* ビデオコンテナ */
-.video-container {
-  position: relative; /* 相対位置指定 */
-  width: 100%; /* 横幅100% */
-  margin: 10px 0; /* 上下の余白 */
-  border-radius: 8px; /* 角を丸く */
-  overflow: hidden; /* はみ出し部分を隠す */
-  cursor: pointer; /* マウスカーソルをポインターに */
-  aspect-ratio: 16/9; /* アスペクト比を固定 */
-}
-
-/* サムネイル画像 */
-.video-thumbnail {
-  width: 100%; /* 横幅100% */
-  height: 100%; /* 高さ100% */
-  object-fit: cover; /* 画像をトリミングして表示 */
-  display: block; /* ブロック要素として表示 */
-  transition: opacity 0.3s; /* 透明度のアニメーション */
-  position: absolute; /* 絶対位置指定 */
-  top: 0; /* 上端に配置 */
-  left: 0; /* 左端に配置 */
-  z-index: 2; /* 動画の上に表示 */
-}
-
-/* 動画プレーヤー */
-.video-player {
-  position: absolute; /* 絶対位置指定 */
-  top: 0; /* 上端に配置 */
-  left: 0; /* 左端に配置 */
-  width: 100%; /* 横幅100% */
-  height: 100%; /* 高さ100% */
-  object-fit: cover; /* 動画をトリミングして表示 */
-  z-index: 1; /* サムネイルの下に配置 */
-}
-
-/* ホバー時：サムネイルを非表示 */
-.video-container:hover .video-thumbnail {
-  opacity: 0; /* 透明にする */
 }
 
 /* ========================================
@@ -317,6 +274,11 @@ nav {
     font-size: 24px;
     padding: 12px 20px;
   }
+
+  /* 作品グリッドを2列に */
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ========================================
@@ -338,5 +300,10 @@ nav {
   .nav-btn {
     padding: 8px 15px; /* 内側の余白を減らす */
     font-size: 12px; /* フォントサイズを小さく */
+  }
+
+  /* 作品グリッドを1列に */
+  .work-grid {
+    grid-template-columns: 1fr;
   }
 }
