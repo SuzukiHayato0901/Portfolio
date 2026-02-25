@@ -1,129 +1,147 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- 文字コード設定 -->
   <meta charset="UTF-8">
-  <!-- レスポンシブ対応のためのビューポート設定 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ページタイトル -->
   <title>鈴木颯斗ポートフォリオ</title>
-  <!-- 外部CSSファイルの読み込み -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   
-<!-- ヘッダー：固定ナビゲーション -->
-<header>
-  <!-- ロゴ（サイト名） -->
-  <h1 class="logo">鈴木颯斗ポートフォリオ</h1>
-  <!-- ナビゲーションメニュー -->
-  <nav>
-    <!-- 各セクションへスクロールするボタン -->
-    <button class="nav-btn" data-target="hero">Top</button>
-    <button class="nav-btn" data-target="about">自己紹介</button>
-    <button class="nav-btn" data-target="skills">制作スキル</button>
-    <button class="nav-btn" data-target="gameWorks">作品一覧</button>
-  </nav>
-</header>
+  <!-- ヘッダー（ロゴとナビゲーション） -->
+  <header>
+    <h1 class="logo">鈴木颯斗ポートフォリオ</h1>
+    <nav>
+      <button class="nav-btn" data-target="hero">Top</button>
+      <button class="nav-btn" data-target="about">自己紹介</button>
+      <button class="nav-btn" data-target="skills">制作スキル</button>
+      <button class="nav-btn" data-target="gameWorks">作品一覧</button>
+    </nav>
+  </header>
 
-<!-- トップページ：メインビジュアル -->
-<div id="hero" class="page">
-  <section class="hero">
-    <h2>ポートフォリオ</h2>
-  </section>
-</div>
+  <!-- トップセクション -->
+  <div id="hero" class="page">
+    <section class="hero">
+      <h2>ポートフォリオ</h2>
+    </section>
+  </div>
 
-<!-- 自己紹介セクション -->
-<div id="about" class="page">
-  <section class="section">
-    <!-- セクション見出し -->
-    <h2>自己紹介</h2>
-    <!-- プロフィール画像とテーブルを横並びに配置 -->
-    <div class="aboutContent">
-      <!-- プロフィール画像 -->
-      <img src="imgs/szai/写真1.jpg" class="myImg" alt="鈴木颯斗">
-      <!-- プロフィール情報エリア -->
-      <div class="profileArea">
-        <!-- 名前 -->
-        <h3 class="profileName">鈴木　颯斗</h3>
-        <!-- プロフィールテーブル -->
-        <table class="profileTable">
-          <tr>
-            <th>生年月日</th>
-            <td>2005年9月1日</td>
-          </tr>
-          <tr>
-            <th>学校</th>
-            <td>横浜デジタルアーツ専門学校　ゲーム科</td>
-          </tr>
-          <tr>
-            <th>趣味</th>
-            <td>ゲーム、ミリタリー、散歩</td>
-          </tr>
-          <tr>
-            <th>好きなゲーム</th>
-            <td>
-              Fate/Grand Order、ポケットモンスターダイヤモンド・パール、モンスターハンター4G<br>
-              スターレゾナンス、艦隊これくしょん～艦これ～
-            </td>
-          </tr>
-        </table>
+  <!-- 自己紹介セクション -->
+  <div id="about" class="page">
+    <section class="section">
+      <h2>自己紹介</h2>
+      <div class="aboutContent">
+        <img src="imgs/szai/写真1.jpg" class="myImg" alt="鈴木颯斗">
+        <div class="profileArea">
+          <h3 class="profileName">鈴木　颯斗</h3>
+          <table class="profileTable">
+            <tr><th>生年月日</th><td>2005年9月1日</td></tr>
+            <tr><th>学校</th><td>横浜デジタルアーツ専門学校　ゲーム科</td></tr>
+            <tr><th>趣味</th><td>ゲーム、ミリタリー、散歩</td></tr>
+            <tr>
+              <th>好きなゲーム</th>
+              <td>
+                Fate/Grand Order、ポケットモンスターダイヤモンド・パール、モンスターハンター4G<br>
+                スターレゾナンス、艦隊これくしょん～艦これ～
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 制作スキルセクション -->
+  <div id="skills" class="page">
+    <section class="section">
+      <h2>制作スキル</h2>
+      <table class="profileTable">
+        <tr>
+          <th>開発言語</th>
+          <td>C、C#、C++、Java、HTML、CSS、PHP</td>
+        </tr>
+        <tr>
+          <th>開発環境</th>
+          <td>Unity、VisualStudio、VisualStudio Code、Sourcetree、GitHub、Unreal Engine4</td>
+        </tr>
+        <tr>
+          <th>使用連絡ツール</th>
+          <td>Slack、Discord</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+
+  <!-- 作品一覧セクション -->
+  <div id="gameWorks" class="page">
+    <section class="section">
+      <h2>作品一覧</h2>
+      <div class="work-grid">
+        
+        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <h3>避けるんデス</h3>
+          <img src="imgs/szai/避けるんデスサムネ.png" alt="2Dシューティング">
+          <p>Unity使用</p>
+        </div>
+
+        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <h3>目指そう明るい未来</h3>
+          <img src="imgs/szai/目指そう明るい未来_サムネ.png" alt="2Dシュミレーション">
+          <p>Unity使用</p>
+        </div>
+
+        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <h3>他作品</h3>
+          <img src="imgs/szai/他作品サムネ.png" alt="他作品">
+          <p>Unity使用</p>
+        </div>
+        
+
+      </div>
+    </section>
+  </div>
+
+  <!-- 動画モーダルウィンドウ（作品詳細表示用） -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">作品詳細</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row text-dark"> <div class="col-md-7">
+              <div class="ratio ratio-16x9 bg-dark mb-3">
+                <video id="modalVideo" controls><source src="" type="video/mp4"></video>
+              </div>
+              <h6 class="fw-bold">【制作目的】</h6>
+              <p>（ここに制作目的のガワが入ります）</p>
+            </div>
+            <div class="col-md-5">
+              <table class="table table-bordered">
+                <thead class="table-primary">
+                  <tr><th>項目</th><th>内容</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>プラットフォーム</td><td>-</td></tr>
+                  <tr><td>使用言語</td><td>-</td></tr>
+                </tbody>
+              </table>
+              <h6 class="fw-bold">【技術的ポイント】</h6>
+              <p>（ここに選んだ理由のガワが入ります）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
       </div>
     </div>
-  </section>
+  </div>
 </div>
-
-<!-- 制作スキルセクション -->
-<div id="skills" class="page">
-  <section class="section">
-    <!-- セクション見出し -->
-    <h2>制作スキル</h2>
-    <!-- スキル一覧テーブル -->
-    <table class="profileTable">
-      <tr>
-        <th>開発言語</th>
-        <td>C、C#、C++、Java、HTML、CSS、PHP</td>
-      </tr>
-      <tr>
-        <th>開発環境</th>
-        <td>Unity、VisualStudio、VisualStudio Code、Sourcetree、GitHub、Unreal Engine4</td>
-      </tr>
-      <tr>
-        <th>使用連絡ツール</th>
-        <td>Slack、Discord</td>
-      </tr>
-    </table>
-  </section>
-</div>
-
-<!-- 制作物（ゲーム）セクション -->
-<div id="gameWorks" class="page">
-  <section class="section">
-    <!-- セクション見出し -->
-    <h2>作品一覧</h2>
-    <!-- 作品をグリッドレイアウトで表示 -->
-    <div class="work-grid">
-      <!-- 作品カード -->
-      <div class="work-card">
-        <h3>避けるんデス</h3>
-        <img src="imgs/szai/避けるんデスサムネ.png" alt="2Dシューティング">
-        <p>Unity使用</p>
-      </div>
-      <div class="work-card">
-        <h3>目指そう明るい未来</h3>
-        <img src="imgs/szai/目指そう明るい未来_サムネ.png" alt="2Dシュミレーション">
-        <p>Unity使用</p>
-    </div>
-      <div class="work-card">
-        <h3>現在作成中</h3>
-        <!-- <img src="imgs/szai/3Dアクションサムネ.png" alt="3Dアクション"> -->
-        <p>Unity使用</p>
-      </div>
-  </section>
-</div>
-
-<!-- 外部JavaScriptファイルの読み込み（ページ最後に配置） -->
-<script src="script.js"></script>
-
+  <!-- メインのJavaScriptファイル読み込み -->
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
