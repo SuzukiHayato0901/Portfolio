@@ -17,58 +17,77 @@ buttons.forEach(btn => {
 });
 
 /* ========================================
-   詳細モーダル表示機能（Bootstrapイベント対応）
+   詳細モーダル表示機能（Bootstrap 5対応）
    ======================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const worksData = {
     "避けるんデス": {
-      purpose: "ここに制作目的を記載予定",
-      specs: [{l:"項目", v:"内容"}],
-      reason: "ここに技術的ポイントを記載予定",
-      github: "#"
+      purpose: "避ける楽しさを追求したSTGです。",
+      specs: [
+        {l:"プラットフォーム", v:"Windows"},
+        {l:"使用言語", v:"C# / Unity"}
+      ],
+      reason: "オブジェクトプールを利用してメモリ負荷を軽減しました。",
+      github: "https://github.com/..."
     },
     "目指そう明るい未来": {
-      purpose: "ここに制作目的を記載予定",
-      specs: [{l:"項目", v:"内容"}],
-      reason: "ここに技術的ポイントを記載予定",
-      github: "#"
+      purpose: "街を発展させるシミュレーションです。",
+      specs: [
+        {l:"プラットフォーム", v:"PC"},
+        {l:"使用言語", v:"C# / Unity"}
+      ],
+      reason: "独自のアルゴリズムで経済システムを実装しました。",
+      github: "https://github.com/..."
     }
   };
 
-  const modalEl = document.getElementById('videoModal');
+  // HTMLのID「exampleModal」を取得
+  const modalEl = document.getElementById('exampleModal');
   const modalVideo = document.getElementById("modalVideo");
-  const specBody = document.getElementById("specBody");
+  const specBody = document.querySelector(".table tbody"); // tableの中身
 
-  // ★モーダルが表示される直前の処理★
-  modalEl.addEventListener('show.bs.modal', (event) => {
-    // クリックされたカード要素を取得
-    const card = event.relatedTarget;
-    const title = card.querySelector("h3").innerText;
-    const data = worksData[title];
+  if (modalEl) {
+    modalEl.addEventListener('show.bs.modal', (event) => {
+      const card = event.relatedTarget;
+      const title = card.querySelector("h3").innerText.trim();
+      const data = worksData[title];
 
-    if (data) {
-      // データの流し込み
-      document.getElementById("modalPurpose").innerText = data.purpose;
-      document.getElementById("modalReason").innerText = data.reason;
-      document.getElementById("githubLink").href = data.github;
-      specBody.innerHTML = data.specs.map(s => `
-        <tr><td style="font-weight:bold; background:#f9f9f9; width:35%;">${s.l}</td><td>${s.v}</td></tr>
-      `).join('');
-      
-      // 動画のセットと再生
-      modalVideo.src = card.dataset.video || "";
-      modalVideo.play();
-    }
-  });
+      if (data) {
+        // テキストの流し込み
+        document.getElementById("modalPurpose").innerText = data.purpose;
+        document.getElementById("modalReason").innerText = data.reason;
+        
+        // テーブル（スペック）の流し込み
+        if (specBody) {
+          specBody.innerHTML = data.specs.map(s => `
+            <tr>
+              <td style="font-weight:bold; background:#f9f9f9; width:35%;">${s.l}</td>
+              <td>${s.v}</td>
+            </tr>
+          `).join('');
+        }
 
-  // ★モーダルが閉じられた時の処理（動画停止）★
-  modalEl.addEventListener('hidden.bs.modal', () => {
-    modalVideo.pause();
-    modalVideo.src = "";
-  });
+        // 動画のセット（data-video属性があれば）
+        if (modalVideo) {
+          modalVideo.src = card.dataset.video || "";
+          modalVideo.play().catch(() => {
+            console.log("自動再生がブロックされました");
+          });
+        }
+      }
+    });
+
+    // モーダルを閉じた時に動画を止める
+    modalEl.addEventListener('hidden.bs.modal', () => {
+      if (modalVideo) {
+        modalVideo.pause();
+        modalVideo.src = "";
+      }
+    });
+  }
 });
 
-/* ========================================
+/*  ========================================
    画像クリック拡大機能
    ======================================== */
 
@@ -108,37 +127,4 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none"; // モーダルを非表示
     }
   });
-});
-
-/* ========================================
-   画像クリック拡大機能
-   ======================================== */
-
-// モーダル要素を取得
-const modal = document.getElementById("imageModal");
-const modalImage = document.getElementById("modalImage");
-const closeModal = document.querySelector(".close-modal");
-
-// 作品カード内のすべての画像を取得
-const workImages = document.querySelectorAll(".work-card img");
-
-// 各画像にクリックイベントを設定
-workImages.forEach(img => {
-  img.addEventListener("click", () => {
-    modal.style.display = "flex"; // モーダルを表示
-    modalImage.src = img.src; // クリックした画像をモーダルに表示
-    modalImage.alt = img.alt; // alt属性もコピー
-  });
-});
-
-// 閉じるボタンをクリックしたらモーダルを閉じる
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none"; // モーダルを非表示
-});
-
-// モーダル背景をクリックしても閉じる
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none"; // モーダルを非表示
-  }
 });
