@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>鈴木颯斗ポートフォリオ</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -37,7 +41,8 @@
           <table class="profileTable">
             <tr><th>生年月日</th><td>2005年9月1日</td></tr>
             <tr><th>学校</th><td>横浜デジタルアーツ専門学校　ゲーム科</td></tr>
-            <tr><th>趣味</th><td>ゲーム、ミリタリー、散歩</td></tr>
+            <tr><th>趣味</th><td>ゲーム、ミリタリー、散歩、釣り
+            </td></tr>
             <tr>
               <th>好きなゲーム</th>
               <td>
@@ -78,19 +83,19 @@
       <h2>作品一覧</h2>
       <div class="work-grid">
         
-        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal" data-video="https://youtu.be/dYVNy6X0oi4">
           <h3>避けるんデス</h3>
           <img src="imgs/szai/避けるんデスサムネ.png" alt="2Dシューティング">
           <p>Unity使用</p>
         </div>
 
-        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal" data-video="https://youtu.be/別の動画ID">
           <h3>目指そう明るい未来</h3>
           <img src="imgs/szai/目指そう明るい未来_サムネ.png" alt="2Dシュミレーション">
           <p>Unity使用</p>
         </div>
 
-        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <div class="work-card" data-bs-toggle="modal" data-bs-target="#exampleModal" data-video="https://youtu.be/別の動画ID">
           <h3>他作品</h3>
           <img src="imgs/szai/他作品サムネ.png" alt="他作品">
           <p>Unity使用</p>
@@ -111,21 +116,22 @@
       </div>
       <div class="modal-body">
         <div class="container-fluid">
-          <div class="row text-dark"> <div class="col-md-7">
-              <div class="ratio ratio-16x9 bg-dark mb-3">
-                <video id="modalVideo" controls><source src="https://youtu.be/dYVNy6X0oi4" type="video/mp4"></video>
+          <div class="row text-dark"> <div class="col-md-7"><!--左：動画-->
+              <div class="video-wrapper">
+                <iframe id="modalVideo"style="border:none;"allowfullscreen></iframe>
               </div>
               <h6 class="fw-bold">【制作目的】</h6>
               <p id="modalPurpose">（ここに制作目的のガワが入ります）</p>
             </div>
+            <!--右：情報-->
             <div class="col-md-5">
               <table class="table table-bordered">
                 <thead class="table-primary">
                   <tr><th>項目</th><th>内容</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>プラットフォーム</td><td>-</td></tr>
-                  <tr><td>使用言語</td><td>-</td></tr>
+                  <tr><td>プラットフォーム</td><td id="modalPlatform">-</td></tr>
+                  <tr><td>使用言語</td><td id="modalLang">-</td></tr>
                 </tbody>
               </table>
               <h6 class="fw-bold">【技術的ポイント】</h6>

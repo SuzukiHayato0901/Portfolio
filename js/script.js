@@ -16,6 +16,16 @@ buttons.forEach(btn => {
   });
 });
 
+const videoUrl = card.dataset.video;
+
+// Youtube用に
+if (videoUrl.includes("youtu.be"))
+{
+  const id = videoUrl.split("/").pop();
+  document.getElementById("modalVideo").src = `https://www.youtube.com/embed/${id}?autoplay=1&mute=1`;
+
+}
+
 /* ========================================
    詳細モーダル表示機能（Bootstrap 5対応）
    ======================================== */
