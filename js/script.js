@@ -35,7 +35,8 @@ document.addEventListener(
 
     const worksData = {
 
-      "避けるんデス": {
+      "避けるんデス":
+      {
         purpose:
           "避ける楽しさを追求したSTGです。",
 
@@ -54,7 +55,8 @@ document.addEventListener(
           "オブジェクトプールを利用してメモリ負荷を軽減しました。"
       },
 
-      "目指そう明るい未来": {
+      "目指そう明るい未来":
+      {
         purpose:
           "街を発展させるシミュレーションです。",
 
@@ -71,8 +73,25 @@ document.addEventListener(
 
         reason:
           "独自のアルゴリズムで経済システムを実装しました。"
+      },
+
+      "ガブッとクリッカー":
+      {
+        purpose:
+          "マウスクリックで食べ物を食べてスコアを競うゲームです。",
+
+        specs: [
+          {
+            l: "プラットフォーム",
+            v: "PC"
+          },
+          {
+            l: "使用言語",
+            v: "C# / Unity"
+          }
+        ]
       }
-    };
+    }
 
     const modalEl =
       document.getElementById(
