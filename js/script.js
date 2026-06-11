@@ -152,35 +152,34 @@ document.addEventListener(
               `).join("");
 
             // ===== 動画処理 =====
-            const videoUrl =
-              card.dataset.video;
+            const videoUrl = card.dataset.video;
 
-            if (
-              videoUrl &&
-              videoUrl.includes(
-                "youtu.be"
-              )
-            ) {
+            if (videoUrl) {
+              let id = "";
 
-              const id =
-                videoUrl
-                  .split("/")
-                  .pop();
+              if (videoUrl.includes("youtu.be/")) {
+                // 短縮URL: https://youtu.be/VIDEO_ID
+                id = videoUrl.split("youtu.be/")[1].split("?")[0];
+              } else if (videoUrl.includes("youtube.com/watch")) {
+                // 通常URL: https://www.youtube.com/watch?v=VIDEO_ID
+                id = new URL(videoUrl).searchParams.get("v");
+              }
 
-              modalVideo.src =
-                `https://www.youtube.com/embed/${id}?autoplay=1`;
+              if (id) {
+                modalVideo.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+              } else {
+                modalVideo.src = "";
+              }
+            } else {
+              modalVideo.src = "";
             }
           }
         }
       );
 
       // 閉じたら停止
-      modalEl.addEventListener(
-        "hidden.bs.modal",
-        () => {
-
-          modalVideo.src = "";
-        }
-      );
+      modalEl.addEventListener("hidden.bs.modal", () => {
+        modalVideo.src = ""; // 停止
+      });
     }
 });
