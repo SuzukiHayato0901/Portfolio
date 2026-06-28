@@ -37,8 +37,8 @@ document.addEventListener(
 
       "避けるんデス":
       {
-        purpose:
-          "多彩なアイテムやボスの攻撃ギミックが登場する、２Ｄシューティングゲームです。快適な捜査官で、スコアやアイテムの取得を意識しながら、弾幕やボスの攻撃を上手く搔い潜る緊張感も楽しめます。",
+        program:
+          "各種アイテム、アイテムの生成管理、wave変更時のアニメーション",
 
         specs: [
           {
@@ -52,13 +52,33 @@ document.addEventListener(
         ],
 
         reason:
-          "オブジェクトプールを利用してメモリ負荷を軽減しました。"
+          "多彩なアイテムやボスの攻撃ギミックが登場する、２Ｄシューティングゲームです。快適な捜査官で、スコアやアイテムの取得を意識しながら、弾幕やボスの攻撃を上手く搔い潜る緊張感も楽しめます。"
+      },
+
+      "Draw&Goal":
+      {
+        program:
+          "タイトルシーン、アイテム、UI",
+
+        specs: [
+          {
+            l: "プラットフォーム",
+            v: "Windows"
+          },
+          {
+            l: "使用言語",
+            v: "C# / Unity"
+          }
+        ],
+
+        reason:
+          "アイテムを収集しモニタに線を引くことで現実世界に橋を生成し、ゴールを目指すアクションゲームです。"
       },
 
       "目指そう明るい未来":
       {
-        purpose:
-          "街を発展させるシミュレーションです。",
+        program:
+          "企画、ボタン処理",
 
         specs: [
           {
@@ -72,13 +92,13 @@ document.addEventListener(
         ],
 
         reason:
-          "独自のアルゴリズムで経済システムを実装しました。"
+          "ランダムに出現するボタンを押して税率を上下させ、国民の怒りゲージがMaxになる前にハイスコアを目指すゲームです。"
       },
 
       "ガブッとクリッカー":
       {
-        purpose:
-          "マウスクリックで食べ物を食べてスコアを競うゲームです。",
+        program:
+          "画面遷移、アニメーション",
 
         specs: [
           {
@@ -89,7 +109,10 @@ document.addEventListener(
             l: "使用言語",
             v: "C# / Unity"
           }
-        ]
+        ],
+        reason:
+          "食べていいものをクリックしてスコアを稼ぎ、ダメなものを3回食べると歯が欠けてゲームオーバーになるクリッカーゲームです。"
+        
       }
     }
 
@@ -130,7 +153,7 @@ document.addEventListener(
             document.getElementById(
               "modalPurpose"
             ).innerText =
-              data.purpose;
+              data.program;
 
             document.getElementById(
               "modalReason"
