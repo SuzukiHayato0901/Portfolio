@@ -318,6 +318,57 @@ nav {
 
 @media (max-width: 850px) { .modal-body-flex { flex-direction: column; } }
 
+/* ========================================
+   担当コードタブ（ファイル切り替え・コード表示）
+   ======================================== */
+/* ファイル名ピルボタンを並べるエリア */
+.code-file-tabs {
+  display: flex; /* 横並び */
+  flex-wrap: wrap; /* 入りきらない場合は折り返し */
+  gap: 8px; /* ボタン間の余白 */
+  margin-bottom: 10px; /* 下の説明文との間隔 */
+}
+
+/* ファイル名ピルボタン本体 */
+.code-file-tab-btn {
+  padding: 4px 14px; /* 内側の余白 */
+  border-radius: 20px; /* 丸いピル形状 */
+  background: #f0f0f0; /* 非選択時の背景色 */
+  color: #333; /* 文字色 */
+  border: 1px solid #ccc; /* 枠線 */
+  font-size: 12px; /* フォントサイズ */
+  font-family: monospace; /* コードらしい等幅フォント */
+  cursor: pointer; /* マウスカーソルをポインターに */
+}
+
+/* 選択中のファイル名ピルボタン */
+.code-file-tab-btn.active {
+  background: #007bff; /* 選択時は青背景 */
+  color: #fff; /* 文字色：白 */
+  border-color: #007bff; /* 枠線も青に */
+}
+
+/* 選択中ファイルの説明文 */
+.code-file-desc {
+  font-size: 13px; /* フォントサイズ */
+  color: #555; /* 文字色：濃いグレー */
+  margin-bottom: 8px; /* 下のコードブロックとの間隔 */
+}
+
+/* コード本体の表示ブロック */
+.code-block {
+  background: #1e1e1e; /* エディタ風の暗い背景 */
+  color: #d4d4d4; /* 文字色：薄いグレー */
+  padding: 14px; /* 内側の余白 */
+  border-radius: 6px; /* 角を丸く */
+  font-size: 12px; /* フォントサイズ */
+  line-height: 1.6; /* 行間 */
+  overflow-x: auto; /* 横スクロール対応 */
+  max-height: 320px; /* 高さの上限 */
+  overflow-y: auto; /* 縦スクロール対応 */
+  white-space: pre; /* インデントや改行をそのまま保持 */
+}
+
 /* 閉じるボタン */
 .close-modal {
   position: absolute; /* 絶対位置 */

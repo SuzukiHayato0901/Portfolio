@@ -119,32 +119,61 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row text-dark"> <div class="col-md-7"><!--左：動画-->
-              <div class="video-wrapper">
-                <iframe id="modalVideo" width="100%" height="315" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+
+        <!-- 【追加】タブ切り替えナビゲーション -->
+        <ul class="nav nav-tabs" id="modalTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tabOverview" type="button">概要・動画</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tabCode" type="button">担当コード</button>
+          </li>
+        </ul>
+
+        <div class="tab-content pt-3">
+
+          <!-- 【変更】既存の概要・動画コンテンツをタブ1として格納 -->
+          <div class="tab-pane fade show active" id="tabOverview">
+            <div class="container-fluid">
+              <div class="row text-dark"> <div class="col-md-7"><!--左：動画-->
+                  <div class="video-wrapper">
+                    <iframe id="modalVideo" width="100%" height="315" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+                  </div>
+                  <!-- 【変更】左：担当箇所 → 概要に変更 -->
+                  <h6 class="fw-bold">【概要】</h6>
+                  <p id="modalPurpose">（ここに概要のガワが入ります）</p>
+                </div>
+                <!--右：情報-->
+                <div class="col-md-5">
+                  <table class="table table-bordered">
+                    <thead class="table-primary">
+                      <tr><th>項目</th><th>内容</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>プラットフォーム</td><td id="modalPlatform">-</td></tr>
+                      <tr><td>使用言語</td><td id="modalLang">-</td></tr>
+                    </tbody>
+                  </table>
+                  <!-- 【変更】右：概要 → 担当箇所に変更 -->
+                  <h6 class="fw-bold">【担当箇所】</h6>
+                  <p id="modalReason">（ここに担当箇所のガワが入ります）</p>
+                </div>
               </div>
-              <!-- 【変更】左：担当箇所 → 概要に変更 -->
-              <h6 class="fw-bold">【概要】</h6>
-              <p id="modalPurpose">（ここに概要のガワが入ります）</p>
-            </div>
-            <!--右：情報-->
-            <div class="col-md-5">
-              <table class="table table-bordered">
-                <thead class="table-primary">
-                  <tr><th>項目</th><th>内容</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>プラットフォーム</td><td id="modalPlatform">-</td></tr>
-                  <tr><td>使用言語</td><td id="modalLang">-</td></tr>
-                </tbody>
-              </table>
-              <!-- 【変更】右：概要 → 担当箇所に変更 -->
-              <h6 class="fw-bold">【担当箇所】</h6>
-              <p id="modalReason">（ここに担当箇所のガワが入ります）</p>
             </div>
           </div>
+
+          <!-- 【追加】担当コードタブの中身 -->
+          <div class="tab-pane fade" id="tabCode">
+            <!-- ファイル切り替え用のピルボタン群（JSで動的生成） -->
+            <div id="codeFileTabs" class="code-file-tabs"></div>
+            <!-- 選択中ファイルの説明文 -->
+            <p id="codeFileDesc" class="code-file-desc"></p>
+            <!-- コード本体表示 -->
+            <pre class="code-block"><code id="codeFileContent"></code></pre>
+          </div>
+
         </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
