@@ -38,7 +38,7 @@ document.addEventListener(
       "避けるんデス":
       {
         program:
-          "・ランダムスポーン処理\n・アイテム3種の作成\n・スポーン統一化の修正\n・ウェーブ切り替え時のアニメーション",
+          "・ランダムスポーン処理\n・アイテム3種の作成\n・スポーン統一化の修正\n・ウェーブ切替アニメーション",
 
         specs: [
           {
@@ -58,7 +58,7 @@ document.addEventListener(
       "Draw&Goal":
       {
         program:
-          "・タイトルシーン\n・アイテム\n・UI",
+        "タイトルシーン\n・アイテム\n・UI",
 
         specs: [
           {
@@ -83,7 +83,7 @@ document.addEventListener(
         specs: [
           {
             l: "プラットフォーム",
-            v: "PC"
+            v: "Windows"
           },
           {
             l: "使用言語",
@@ -103,16 +103,16 @@ document.addEventListener(
         specs: [
           {
             l: "プラットフォーム",
-            v: "PC"
+            v: "Windows"
           },
           {
             l: "使用言語",
             v: "C# / Unity"
           }
         ],
+
         reason:
           "食べていいものをクリックしてスコアを稼ぎ、ダメなものを3回食べると歯が欠けてゲームオーバーになるクリッカーゲームです。"
-        
       }
     }
 
@@ -150,15 +150,17 @@ document.addEventListener(
 
           if (data) {
 
+            // 【変更】modalPurpose ← data.reason（概要を表示）
             document.getElementById(
               "modalPurpose"
             ).innerText =
-              data.program;
+              data.reason;
 
+            // 【変更】modalReason ← data.program（担当箇所を表示）
             document.getElementById(
               "modalReason"
             ).innerText =
-              data.reason;
+              data.program;
 
             specBody.innerHTML =
               data.specs.map(s => `
@@ -189,7 +191,7 @@ document.addEventListener(
               }
 
               if (id) {
-                modalVideo.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+                modalVideo.src = `https://www.youtube.com/embed/${id}`;
               } else {
                 modalVideo.src = "";
               }
