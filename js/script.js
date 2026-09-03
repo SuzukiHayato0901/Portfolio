@@ -796,6 +796,30 @@ public class ScoreMove: MonoBehaviour
 }`
           }
         ]
+      },
+
+      // 【追加】Gravity
+      "Gravity":
+      {
+        program:
+          "全て",
+
+        specs: [
+          {
+            l: "プラットフォーム",
+            v: "Windows"
+          },
+          {
+            l: "使用言語",
+            v: "C# / Unity6"
+          }
+        ],
+
+        reason:
+          "重力を操作して障害物を乗り越え、ステージから脱出を目指す3Dアクションゲームです。",
+
+        // 動画は作成中のため未設定
+        codeFiles: []
       }
     }
 
@@ -842,6 +866,9 @@ public class ScoreMove: MonoBehaviour
           btn.classList.add("active");
           codeFileDescEl.innerText = file.desc;
           codeFileContentEl.innerText = file.code;
+
+          // 【追加】切り替え時にコードを色付け
+          hljs.highlightElement(codeFileContentEl);
         });
 
         codeFileTabsEl.appendChild(btn);
@@ -850,6 +877,9 @@ public class ScoreMove: MonoBehaviour
       // 初期表示は1つ目のファイル
       codeFileDescEl.innerText = codeFiles[0].desc;
       codeFileContentEl.innerText = codeFiles[0].code;
+
+      // 【追加】初期表示のコードを色付け
+      hljs.highlightElement(codeFileContentEl);
     }
 
     if (modalEl) {
